@@ -1,21 +1,23 @@
 import "./App.css";
-import Button from "react-bootstrap/Button";
 import Header from "./components/Header";
 import { Container } from "react-bootstrap";
 import Footer from "./components/Footer";
 import HomeScreen from "./screens/HomeScreen";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import ProductScreen from "./screens/ProductScreen";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
       <main>
         <Container>
-          <HomeScreen />
+          <Route path="/" component={HomeScreen} exact />
+          <Route path="/" component={ProductScreen} />
         </Container>
       </main>
       <Footer />
-    </>
+    </Router>
   );
 }
 
